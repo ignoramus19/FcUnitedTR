@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block body %}
+<center>
+<header class="jumbotron" style="background-color: rgb(233, 228, 220);">
+
+<img src="{% static 'images/5.png' %}" alt=""><br><br><hr>
+
+<div class="row">
+  <center>
+  <!-- Post Content Column -->
+  <div class="col-lg-8">
+    <center>
+    <!-- Title -->
+    <h3 class="mt-4">{{news.title}}</h3>
+    <hr>
+
+    
+
+    <!-- Preview Image 
+
+    {% if news.news_image %}
+    <img class="img-fluid rounded" src="{{news.news_image.url}}" alt="" height="400" width="400">
+    {% endif %}
+   
+
+    <hr> -->
+
+    <!-- Post Content -->
+    <div class="card" style="background-color: rgba(204, 204, 204, 0.507);">
+      <div class="card-body">
+        {{news.content|safe}}
+      </div>
+    </div>
+
+    <!-- <p class="lead" style="text-align: center;">
+        {{news.content|safe}}
+    </p> -->
+ 
+    <hr>
+    <!-- Date/Time -->
+    <p><small>Haber Tarihi : {{news.created_date}}</small></p>
+
+    <hr>
+  </center>
+  </div>
+</center>
+</div>
+
+</header>
+</center>
+{% endblock body %}

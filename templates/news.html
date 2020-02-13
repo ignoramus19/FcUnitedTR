@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block body %}
+<center>
+<header class="jumbotron my-4" style="background-color: rgb(233, 228, 220);">
+<img src="{% static 'images/5.png' %}" alt=""><br><br>
+<h3>Kulübümüzden Haberler</h3>
+
+<table class="table" style="background-color: rgba(255, 253, 249, 0.671); max-width: 90%;">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Başlık</th>
+            <th scope="col">Tarih</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for n in news %}
+          <tr>
+            <td style="vertical-align: middle;"><a href="{% url 'fcutdsite:detail' n.id %}"><img class="img-fluid rounded" src="{{n.news_image.url}}" alt="" height="50" width="50"></a></td>
+            <td style="vertical-align: middle;"><a href="{% url 'fcutdsite:detail' n.id %}">{{n.title}}</a></td>
+            <td style="vertical-align: middle;">{{n.created_date}}</td>
+          </tr>
+          {% endfor %}
+          
+        </tbody>
+      </table>
+        
+        
+</header>
+</center>
+{% endblock body %}
+
+<!-- </a> -->

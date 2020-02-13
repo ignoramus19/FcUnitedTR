@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block body %}
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Jumbotron Header -->
+    <header class="jumbotron my-4">
+      <center>
+      <h2>FC United Of Manchester Türkçe Resmi Web Sitesine Hoşgeldiniz!</h2><br>
+	  <img src="{% static 'images/6.png' %}" alt=""><br><br>
+      <h5>Taraftarlarının "kulüp müşterisi" değil "kulüp eş-sahibi/hissedarı" olduğu, kulüplerinin kararlarına katılabildiği, kâr yapmayı değil kaliteli futbol kültürü oluşturmayı amaçlayan İngiltere Alt-Lig kulübü:</h5><br>
+      <h2>FC UNITED OF MANCHESTER</h2>
+      <hr>
+      <div class="w3-container w3-padding w3-fcred w3-left-align w3-large whitetitle"><b>Kulübümüzün Sesi : FCUM Radio</b><br>
+      </div><br>
+      <script src="https://embed.radio.co/player/cd42370.js"></script><hr>
+    
+
+    
+  <h2 class="my-4">Kulübümüzden Haberler :</h2>
+  <center>
+  <table class="table" style="background-color: rgba(255, 253, 249, 0.671); max-width: 65%;">
+    <tbody>
+      {% for n in news %}
+      <tr>
+
+        <td>
+          {% if n.news_image %}
+          <a href="{% url 'fcutdsite:detail' n.id %}"><img class="img-fluid rounded" src="{{n.news_image.url}}" alt="" height="50" width="50"></a>
+          {% endif %}
+          </td>
+        <td style="vertical-align: middle;"><a href="{% url 'fcutdsite:detail' n.id %}">{{n.title}}</a></td>
+        <!-- <td>{{n.created_date}}</td> -->
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</center>
+ 
+
+
+
+      <!-- Page Heading 
+  <div class="row">
+    
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+      {% for n in news %}
+      <div class="card h-100">
+        
+        {% if n.news_image %}
+        <img class="img-fluid rounded" src="{{n.news_image.url}}" alt="" height="250" width="250">
+        {% endif %}
+        <div class="card-body">
+          <h4 class="card-title">
+            <a href="{% url 'fcutdsite:detail' n.id %}">{{n.title}}</a>
+          </h4>
+          <p class="card-text">
+            {{n.content|safe|truncatewords:50}}
+          </p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div> -->
+
+  <!-- Pagination -->
+  <ul class="pagination justify-content-center">
+    <li class="page-item" style="text-align: center;">
+      <a class="page-link" href="{% url 'fcutdsite:news' %}">Tüm Haberler</a>
+    </li>
+  </ul> 
+  <hr>
+  
+
+
+</center>
+</header>
+</div>
+<!-- /.container -->
+
+
+
+
+{% endblock body %}
+

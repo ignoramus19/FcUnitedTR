@@ -1,0 +1,20 @@
+{% extends "yourclub_layout.html" %}
+{% load static %}
+
+{% block body %}
+
+<header class="jumbotron my-4" style="background-color: rgb(233, 228, 220);">
+
+<center>
+
+<h3>Kulübümüz FC United of Manchester</h3>
+<h5>Kulübümüzün kadrosuna, fikstürüne, puan durumuna ve evimiz Broadhurst Park hakkında ayrıntılı bilgiye bu sayfadan ulaşabilirsiniz!</h5>
+<hr>
+<a href="{% url 'fcutdsite:yourclub' %}"><img src="{% static 'images/fcumtext.png' %}" alt=""></a>
+<hr>
+
+</center>
+
+</header>
+
+{% endblock body %}
